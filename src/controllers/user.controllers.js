@@ -47,13 +47,6 @@ const registerUser=asyncHandler(async (req, res) => {
     if(!avatarLocalPath)
         throw new ApiError(400, "Avatar file is missing")
 
-    // const avatar = await uploadOnCloudinary(avatarLocalPath.path)
-
-    // let coverImage=null
-    // if(coverLocalPath)
-    //     coverImage= await uploadOnCloudinary(coverLocalPath.path)
-
-
     let avatar;
     try{
         avatar = await uploadOnCloudinary(avatarLocalPath.path)
